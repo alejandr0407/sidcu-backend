@@ -1,10 +1,11 @@
-package com.cesde.sidcu.model.embeddable;
+package com.cesde.sidcudb.model.embeddable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.io.Serializable;
 
 @Getter
@@ -13,9 +14,9 @@ import java.io.Serializable;
 @Embeddable
 public class InteresId implements Serializable {
 
-    @Column(name = "idestudiante")
-    private Long idEstudiante;
+    @Column(name = "estudiante_id")
+    private Long estudianteId;
 
-    @Column(name = "idcarrera")
-    private Long idCarrera;
+    @Column(name = "carrera_id")
+    private Long carreraId;
 }
