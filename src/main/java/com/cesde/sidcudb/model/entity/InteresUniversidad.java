@@ -14,19 +14,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "interes_universidad")
+@Table (name = "interes_universidad")
 public class InteresUniversidad {
 
     @EmbeddedId
     private InteresUniversidadId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("estudianteId")
-    @JoinColumn(name = "estudiante_id")
+    @MapsId ("estudianteId")
+    @JoinColumn (name = "estudiante_id")
     private Estudiante estudiante;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("universidadId")
-    @JoinColumn(name = "universidad_id")
+    @ManyToOne (fetch = FetchType.LAZY)
+    @MapsId ("universidadId")
+    @JoinColumn (name = "universidad_id")
     private Universidad universidad;
 }

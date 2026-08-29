@@ -12,16 +12,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "universidades")
+@Table (name = "universidades")
 public class Universidad extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 150)
+    @Column (nullable = false, unique = true, length = 150)
     private String nombre;
 
-    @Column(nullable = false, length = 50)
+    @Column (nullable = false, length = 50)
     private String ciudad;
 
-    @Column(nullable = false, length = 50)
+    @Column (nullable = false, length = 50)
     private String tipo;
 
     @Embedded

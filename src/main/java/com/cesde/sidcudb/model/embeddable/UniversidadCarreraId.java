@@ -14,9 +14,9 @@ import java.io.Serializable;
 @Embeddable
 public class UniversidadCarreraId implements Serializable {
 
-    @Column(name = "universidad_id")
+    @Column (name = "universidad_id")
     private Long universidadId;
 
-    @Column(name = "carrera_id")
+    @Column (name = "carrera_id")
     private Long carreraId;
 }

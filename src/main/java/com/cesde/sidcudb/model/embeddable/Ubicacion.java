@@ -10,9 +10,9 @@ import lombok.Setter;
 @Embeddable
 public class Ubicacion {
 
-    @Column(name = "direccion", length = 150)
+    @Column (name = "direccion", length = 150)
     private String direccion;
 
-    @Column(name = "codigo_postal", length = 20)
+    @Column (name = "codigo_postal", length = 20)
     private String codigoPostal;
 }

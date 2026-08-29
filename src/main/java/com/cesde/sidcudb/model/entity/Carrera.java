@@ -16,13 +16,13 @@ import lombok.Setter;
 @Table(name = "carreras")
 public class Carrera extends BaseEntity {
 
-    @Column(nullable = false, unique = true)
+    @Column (nullable = false, unique = true)
     private String nombre;
 
-    @Column(nullable = false)
+    @Column (nullable = false)
     private String area;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Enumerated (EnumType.STRING)
+    @Column (nullable = false)
     private NivelAcademico nivel;
 }

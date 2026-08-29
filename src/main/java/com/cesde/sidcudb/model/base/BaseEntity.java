@@ -18,16 +18,16 @@ import java.time.LocalDateTime;
 public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fecha_creacion", updatable = false)
+    @Column (name = "fecha_creacion", updatable = false)
     private LocalDateTime fechaCreacion;
 
-    @Column(name = "fecha_actualizacion")
+    @Column (name = "fecha_actualizacion")
     private LocalDateTime fechaActualizacion;
 
-    @Column(name = "estado_activo")
+    @Column (name = "estado_activo")
     private Boolean estadoActivo = true;
 
     @PrePersist

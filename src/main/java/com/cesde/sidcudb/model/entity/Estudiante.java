@@ -10,15 +10,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "estudiantes")
+@Table (name = "estudiantes")
 public class Estudiante extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column (nullable = false, unique = true, length = 20)
     private String documento;
 
-    @Column(nullable = false, length = 100)
+    @Column (nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, length = 50)
+    @Column (nullable = false, length = 50)
     private String ciudad;
 }

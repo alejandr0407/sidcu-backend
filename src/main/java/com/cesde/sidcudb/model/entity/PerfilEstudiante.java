@@ -13,16 +13,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "perfiles_estudiante")
+@Table (name = "perfiles_estudiante")
 public class PerfilEstudiante extends BaseEntity {
 
-    @Column(name = "biografia", length = 255)
+    @Column (name = "biografia", length = 255)
     private String biografia;
 
-    @Column(name = "sitio_web", length = 100)
+    @Column (name = "sitio_web", length = 100)
     private String sitioWeb;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "estudiante_id", referencedColumnName = "id", nullable = false, unique = true)
+    @OneToOne (cascade = CascadeType.ALL)
+    @JoinColumn (name = "estudiante_id", referencedColumnName = "id", nullable = false, unique = true)
     private Estudiante estudiante;
 }
