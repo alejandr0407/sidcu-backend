@@ -1,32 +1,24 @@
 package com.cesde.sidcudb.model.entity;
 
+import com.cesde.sidcudb.model.base.BaseEntity;
 import com.cesde.sidcudb.model.embeddable.InteresUniversidadId;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-@Getter
-@Setter
 @Entity
-@Table (name = "interes_universidad")
-public class InteresUniversidad {
-
+@Table(name = "interes_universidad")
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor 
+@AllArgsConstructor 
+@SuperBuilder
+public class InteresUniversidad extends BaseEntity { 
     @EmbeddedId
     private InteresUniversidadId id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId ("estudianteId")
-    @JoinColumn (name = "estudiante_id")
-    private Estudiante estudiante;
-
-    @ManyToOne (fetch = FetchType.LAZY)
-    @MapsId ("universidadId")
-    @JoinColumn (name = "universidad_id")
-    private Universidad universidad;
 }
