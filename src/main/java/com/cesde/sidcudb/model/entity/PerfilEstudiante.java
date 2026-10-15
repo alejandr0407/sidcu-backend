@@ -1,28 +1,38 @@
+
 package com.cesde.sidcudb.model.entity;
 
 import com.cesde.sidcudb.model.base.BaseEntity;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "perfil_estudiante")
-@Data
-@EqualsAndHashCode(callSuper = true)
-@NoArgsConstructor 
-@AllArgsConstructor 
-@SuperBuilder
+@Table(name = "perfiles_estudiante")
 public class PerfilEstudiante extends BaseEntity {
-    private String telefono;
-    private String direccion;
 
-    @OneToOne
-    @JoinColumn(name = "estudiante_id")
+    @Column(name = "biografia", length = 255)
+    private String biografia;
+
+    @Column(name = "sitio_web", length = 100)
+    private String sitioWeb;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(
+        name = "estudiante_id",
+        referencedColumnName = "id",
+        nullable = false,
+        unique = true
+    )
     private Estudiante estudiante;
 }
