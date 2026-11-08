@@ -1,8 +1,7 @@
-
 package com.cesde.sidcudb.model.entity;
 
 import com.cesde.sidcudb.model.base.BaseEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -24,24 +23,24 @@ import java.util.List;
 @Table(name = "estudiantes")
 public class Estudiante extends BaseEntity {
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(name = "documento", nullable = false, unique = true, length = 20)
     private String documento;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "ciudad", nullable = false, length = 50)
     private String ciudad;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "estudiante")
+    /** Relación uno a muchos: carreras de interés del estudiante. */
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.REMOVE)
     private List<Interes> intereses = new ArrayList<>();
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "estudiante")
+    /** Relación uno a muchos: universidades de interés del estudiante. */
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.REMOVE)
     private List<InteresUniversidad> interesesUniversidad = new ArrayList<>();
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "estudiante")
+    /** Relación uno a uno (lado inverso): perfil extendido del estudiante. */
+    @OneToOne(mappedBy = "estudiante", cascade = CascadeType.REMOVE)
     private PerfilEstudiante perfil;
 }
