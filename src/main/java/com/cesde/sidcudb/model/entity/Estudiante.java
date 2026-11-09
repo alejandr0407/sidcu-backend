@@ -1,3 +1,4 @@
+
 package com.cesde.sidcudb.model.entity;
 
 import com.cesde.sidcudb.model.base.BaseEntity;
@@ -23,24 +24,36 @@ import java.util.List;
 @Table(name = "estudiantes")
 public class Estudiante extends BaseEntity {
 
-    @Column(name = "documento", nullable = false, unique = true, length = 20)
+    @Column(name = "documento", nullable = false,
+            unique = true, length = 20)
     private String documento;
 
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
+    @Column(name = "apellido", nullable = false, length = 100)
+    private String apellido;
+
     @Column(name = "ciudad", nullable = false, length = 50)
     private String ciudad;
 
-    /** Relación uno a muchos: carreras de interés del estudiante. */
-    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.REMOVE)
+    @Column(name = "correo", nullable = false,
+            unique = true, length = 100)
+    private String correo;
+
+    @Column(name = "contrasena", nullable = false, length = 255)
+    private String contrasena;
+
+    @OneToMany(mappedBy = "estudiante",
+            cascade = CascadeType.REMOVE)
     private List<Interes> intereses = new ArrayList<>();
 
-    /** Relación uno a muchos: universidades de interés del estudiante. */
-    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.REMOVE)
-    private List<InteresUniversidad> interesesUniversidad = new ArrayList<>();
+    @OneToMany(mappedBy = "estudiante",
+            cascade = CascadeType.REMOVE)
+    private List<InteresUniversidad> interesesUniversidad =
+            new ArrayList<>();
 
-    /** Relación uno a uno (lado inverso): perfil extendido del estudiante. */
-    @OneToOne(mappedBy = "estudiante", cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "estudiante",
+            cascade = CascadeType.REMOVE)
     private PerfilEstudiante perfil;
 }
