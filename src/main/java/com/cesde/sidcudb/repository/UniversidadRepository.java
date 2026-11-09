@@ -14,4 +14,8 @@ public interface UniversidadRepository extends JpaRepository<Universidad, Long> 
     List<Universidad> findByCiudad(String ciudad);
 
     Optional<Universidad> findByNombre(String nombre);
+
+    List<Universidad> findByCiudadIgnoreCase(String ciudad);
+
+    List<Universidad> findByNombreContainingIgnoreCase(String nombre);
 }
