@@ -1,11 +1,10 @@
-
 package com.cesde.sidcudb.dto.response;
 
+/** Respuesta básica de registro e inicio de sesión, sin token. */
 public record LoginResponseDTO(
-        String token,
-        String tipo,
         Long id,
         String nombre,
-        String correo
+        String correo,
+        String tipo
 ) {
 }
