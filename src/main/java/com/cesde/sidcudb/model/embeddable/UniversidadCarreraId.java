@@ -16,7 +16,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Embeddable
-public class UniversidadCarreraId implements Serializable {
+
+public class UniversidadCarreraId implements Serializable  {
 
     @Column (name = "universidad_id")
     private Long universidadId;
