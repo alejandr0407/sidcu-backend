@@ -42,4 +42,8 @@ public class Carrera extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "habilidad_id")
     )
     private Set<Habilidad> habilidades = new HashSet<>();
+
+    public String getNombre() {
+    return nombre;
+}
 }

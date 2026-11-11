@@ -31,4 +31,8 @@ public class Universidad extends BaseEntity {
 
     @Embedded
     private Ubicacion ubicacion;
+    
+    public String getNombre() {
+    return nombre;
+}
 }
