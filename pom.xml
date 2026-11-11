@@ -90,7 +90,6 @@
                 <version>3.14.1</version>
                 <configuration>
                     <release>17</release>
-
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -98,12 +97,6 @@
                             <version>1.18.42</version>
                         </path>
                     </annotationProcessorPaths>
-
-                    <annotationProcessors>
-                        <annotationProcessor>
-                            lombok.launch.AnnotationProcessorHider$AnnotationProcessor
-                        </annotationProcessor>
-                    </annotationProcessors>
                 </configuration>
             </plugin>
         </plugins>
