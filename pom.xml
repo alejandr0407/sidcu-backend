@@ -89,6 +89,19 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.1</version>
                 <configuration>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.42</version>
+                    </path>
+                </annotationProcessorPaths>
+
+                <annotationProcessors>
+                    <annotationProcessor>
+                        lombok.launch.AnnotationProcessorHider$AnnotationProcessor
+                    </annotationProcessor>
+                    </annotationProcessors>
                     <release>17</release>
                     <annotationProcessorPaths>
                         <path>
